@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #141414;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "gheader"
+    "gnav"
+    "gmain"
+    "gaside"
+    "gfooter";
+}
+header {
+  background-image: url("images/header_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  color: black;
+  text-shadow: 2px 2px aliceblue;
+  align-content: center;
+  text-align: center;
+  grid-area: gheader;
+}
+nav {
+  background-color: #141313;
+  position: sticky;
+  top: 0;
+  grid-area: gnav;
+}
+nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+nav li {
+  margin: 0 auto;
+}
+nav a {
+  padding: 15px;
+  text-decoration: none;
+  color: aliceblue;
+}
+nav a:hover {
+  background-color: aliceblue;
+  color: #141313;
+}
+main {
+  grid-area: gmain;
+  color: aliceblue;
+}
+aside {
+  grid-area: gaside;
+  color: aliceblue;
+}
+footer {
+  grid-area: gfooter;
+  text-align: end;
+  color: aliceblue;
+}
+.wrapper {
+  display: grid;
+}
+section img {
+  width: 100%;
+  height: auto;
+}
+h2 {
+  text-align: center;
+}
+.item {
+  border: 3px solid white;
+  text-align: center;
+}
+@media screen and (min-width: 576px) {
+  section {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "gheader gheader"
+      "gnav gmain"
+      "gaside gaside"
+      "gfooter gfooter";
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    padding: 15px;
+  }
+  section {
+    width: 100%;
+  }
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "gheader gheader gheader"
+      "gnav gmain gaside"
+      "gfooter gfooter gfooter";
+  }
+  section img {
+    height: 330px;
+  }
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  }
+}
